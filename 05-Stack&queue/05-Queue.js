@@ -20,7 +20,26 @@ const { Queue } = require("../estructuras")
 var controlAcces = function(queue, event){
     // Tu código aca:
     
-  };
+      var ingresados = []
+      var boletos = []
+      for (var key in queue) {
+        let busq = queue[key]
+        for (var i = 0; i < busq.length; i++) {
+          if (busq[i].age >= 18 && busq[i].ticket.event === event) {
+            if (busq[i].ticket.number) {
+              if (!boletos.includes(busq[i].ticket.number)) {
+                boletos.push(busq[i].ticket.number)
+                ingresados.push(busq[i].fullname)
+              }
+            }
+          }
+        }
+        return ingresados
+        //queue.dequeue()
+      }
+};
+    
+
       
   
 

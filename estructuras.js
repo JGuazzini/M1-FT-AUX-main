@@ -17,6 +17,8 @@ function Queue() {
   function Stack(){
     this.array = [];
   }
+
+ 
   
   Stack.prototype.push = function(elemento){
     this.array.push(elemento);
